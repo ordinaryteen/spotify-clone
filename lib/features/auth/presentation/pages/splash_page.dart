@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:spotify_clone/core/config/app_assets.dart';
 import 'package:spotify_clone/core/theme/app_colors.dart';
 import 'package:spotify_clone/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:spotify_clone/features/auth/presentation/bloc/auth_event.dart';
@@ -40,7 +41,7 @@ class _SplashPageState extends State<SplashPage> {
         },
         child: Center(
           child: Image.asset(
-            'assets/images/spotify_logo.png',
+            AppAssets.spotifyLogo,
             width: 200,
           ),
         ),

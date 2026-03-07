@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:spotify_clone/core/config/app_assets.dart';
 
 class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? title;
@@ -16,8 +17,7 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.transparent,
       elevation: 0,
       centerTitle: true,
-      title: title ??
-          Image.asset('assets/images/spotify_extended_logo.png', width: 120),
+      title: title ?? Image.asset(AppAssets.spotifyExtendedLogo, width: 120),
       leading: hideBack
           ? null
           : Padding(
