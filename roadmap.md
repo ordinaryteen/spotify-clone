@@ -1,15 +1,15 @@
 ### 🏗️ PHASE 1: FOUNDATION & INFRASTRUCTURE
-- [ ] **Project Setup**
-    - [ ] `flutter create` dengan package name yang bener.
-    - [ ] Setup Folder Structure: `lib/core`, `lib/features`, `lib/service_locator.dart`.
+- [x] **Project Setup**
+    - [x] `flutter create` dengan package name yang bener.
+    - [x] Setup Folder Structure: `lib/core`, `lib/features`, `lib/service_locator.dart`.
 - [ ] **Supabase Initial**
     - [ ] Create Project di Supabase Dashboard.
     - [ ] Setup Table `users` (id, full_name, email, avatar_url).
     - [ ] Setup Table `songs` (id, title, artist, song_url, cover_url, duration, user_id).
     - [ ] Enable RLS (Row Level Security) untuk semua table.
-- [ ] **Configuration Files**
-    - [ ] `pubspec.yaml`: Add `supabase_flutter`, `get_it`, `dartz`, `flutter_bloc`, `equatable`, `file_picker`, `just_audio`.
-    - [ ] Setup `assets/fonts`, `assets/images`, `assets/vectors`.
+- [x] **Configuration Files**
+    - [x] `pubspec.yaml`: Add `supabase_flutter`, `get_it`, `dartz`, `flutter_bloc`, `equatable`, `file_picker`, `just_audio`.
+    - [x] Setup `assets/fonts`, `assets/images`, `assets/vectors`.
 - [ ] **Core Logic**
     - [ ] Create `Failure` & `Exception` classes (handling error biar seragam).
     - [ ] Create `AppTheme` (Dark & Light theme data, button styles, input decoration).
