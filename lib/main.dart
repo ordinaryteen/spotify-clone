@@ -1,7 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:spotify_clone/core/theme/app_theme.dart';
+import 'package:spotify_clone/core/config/env.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // 1. Setup DI (GetIt)
+  // setupLocator();
+
+  // 2. Init Supabase
+  await Supabase.initialize(
+    url: Env.supabaseUrl,
+    anonKey: Env.supabaseAnonKey,
+  );
+
   runApp(const MyApp());
 }
 

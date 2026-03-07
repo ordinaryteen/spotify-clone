@@ -2,8 +2,8 @@
 - [x] **Project Setup**
     - [x] `flutter create` dengan package name yang bener.
     - [x] Setup Folder Structure: `lib/core`, `lib/features`, `lib/service_locator.dart`.
-- [ ] **Supabase Initial**
-    - [ ] Create Project di Supabase Dashboard.
+- [x] **Supabase Initial**
+    - [x] Create Project di Supabase Dashboard.
     - [ ] Setup Table `users` (id, full_name, email, avatar_url).
     - [ ] Setup Table `songs` (id, title, artist, song_url, cover_url, duration, user_id).
     - [ ] Enable RLS (Row Level Security) untuk semua table.
