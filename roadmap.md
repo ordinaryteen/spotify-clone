@@ -10,10 +10,10 @@
 - [x] **Configuration Files**
     - [x] `pubspec.yaml`: Add `supabase_flutter`, `get_it`, `dartz`, `flutter_bloc`, `equatable`, `file_picker`, `just_audio`.
     - [x] Setup `assets/fonts`, `assets/images`, `assets/vectors`.
-- [ ] **Core Logic**
-    - [ ] Create `Failure` & `Exception` classes (handling error biar seragam).
-    - [ ] Create `AppTheme` (Dark & Light theme data, button styles, input decoration).
-    - [ ] Initialize `ServiceLocator` (GetIt setup).
+- [x] **Core Logic**
+    - [x] Create `Failure` & `Exception` classes (handling error biar seragam).
+    - [x] Create `AppTheme` (Dark & Light theme data, button styles, input decoration).
+    - [x] Initialize `ServiceLocator` (GetIt setup).
 
 ### 🚀 PHASE 2: ENTRY POINT (SPLASH & AUTH)
 - [ ] **Auth Domain Layer**
