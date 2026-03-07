@@ -24,8 +24,8 @@
     - [x] `UserModel`: extends `UserEntity` + `fromJson`/`toJson`.
     - [x] `AuthRemoteDataSource`: Connect ke `Supabase.instance.client.auth`.
     - [x] `AuthRepositoryImpl`: Jembatan antara DataSource dan Domain.
-- [ ] **Auth Presentation Layer**
-    - [ ] `AuthCubit/Bloc`: Manage state (Loading, Success, Error).
+- [x] **Auth Presentation Layer**
+    - [x] `AuthCubit/Bloc`: Manage state (Loading, Success, Error).
     - [ ] UI: `SplashPage` (Logic: `auth.currentUser != null` ? Home : GetStarted).
     - [ ] UI: `GetStartedPage`.
     - [ ] UI: `SignupPage` (Input validation + Call SignupUseCase).
