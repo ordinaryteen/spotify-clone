@@ -26,10 +26,10 @@
     - [x] `AuthRepositoryImpl`: Jembatan antara DataSource dan Domain.
 - [x] **Auth Presentation Layer**
     - [x] `AuthCubit/Bloc`: Manage state (Loading, Success, Error).
-    - [ ] UI: `SplashPage` (Logic: `auth.currentUser != null` ? Home : GetStarted).
-    - [ ] UI: `GetStartedPage`.
-    - [ ] UI: `SignupPage` (Input validation + Call SignupUseCase).
-    - [ ] UI: `LoginPage`.
+    - [x] UI: `SplashPage` (Logic: `auth.currentUser != null` ? Home : GetStarted).
+    - [x] UI: `GetStartedPage`.
+    - [x] UI: `SignupPage` (Input validation + Call SignupUseCase).
+    - [x] UI: `LoginPage`.
 
 ### 🎨 PHASE 3: APP PREFERENCE (THEME)
 - [ ] **Theme Domain**

@@ -1,11 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:spotify_clone/core/theme/app_colors.dart';
-import 'package:spotify_clone/src/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:spotify_clone/src/features/auth/presentation/bloc/auth_event.dart';
-import 'package:spotify_clone/src/features/auth/presentation/bloc/auth_state.dart';
+import 'package:spotify_clone/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:spotify_clone/features/auth/presentation/bloc/auth_event.dart';
+import 'package:spotify_clone/features/auth/presentation/bloc/auth_state.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
