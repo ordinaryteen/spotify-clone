@@ -6,6 +6,7 @@ abstract class AuthRemoteDataSource {
   Future<UserModel> signIn(String email, String password);
   Future<UserModel> signUp(String email, String password, String fullName);
   Future<UserModel?> getCurrentUser();
+  Future<void> signOut();
 }
 
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
@@ -38,8 +39,9 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         password: password,
         data: {'full_name': fullName},
       );
-      if (response.user == null)
+      if (response.user == null) {
         throw ServerException('User null after signup');
+      }
       return _getUserProfile(response.user!.id);
     } on AuthException catch (e) {
       throw ServerException(e.message);
@@ -55,6 +57,15 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       if (user == null) return null;
 
       return UserModel.fromSupabaseUser(user);
+    } catch (e) {
+      throw ServerException(e.toString());
+    }
+  }
+
+  @override
+  Future<void> signOut() async {
+    try {
+      await supabaseClient.auth.signOut();
     } catch (e) {
       throw ServerException(e.toString());
     }

@@ -16,4 +16,6 @@ abstract class AuthRepository {
 
   // Nanti buat auto-login pas app pertama kali buka
   Future<Either<Failure, UserEntity>> getCurrentUser();
+
+  Future<Either<Failure, void>> signOut();
 }

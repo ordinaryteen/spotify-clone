@@ -16,14 +16,14 @@
     - [x] Initialize `ServiceLocator` (GetIt setup).
 
 ### 🚀 PHASE 2: ENTRY POINT (SPLASH & AUTH)
-- [ ] **Auth Domain Layer**
-    - [ ] `UserEntity`: id, email, name, image.
-    - [ ] `AuthRepository` (Interface): `signup()`, `signin()`, `getUser()`.
-    - [ ] Use Cases: `SignupUseCase`, `SigninUseCase`, `GetUserUseCase`.
-- [ ] **Auth Data Layer**
-    - [ ] `UserModel`: extends `UserEntity` + `fromJson`/`toJson`.
-    - [ ] `AuthRemoteDataSource`: Connect ke `Supabase.instance.client.auth`.
-    - [ ] `AuthRepositoryImpl`: Jembatan antara DataSource dan Domain.
+- [x] **Auth Domain Layer**
+    - [x] `UserEntity`: id, email, name, image.
+    - [x] `AuthRepository` (Interface): `signup()`, `signin()`, `getUser()`.
+    - [x] Use Cases: `SignupUseCase`, `SigninUseCase`, `GetUserUseCase`.
+- [x] **Auth Data Layer**
+    - [x] `UserModel`: extends `UserEntity` + `fromJson`/`toJson`.
+    - [x] `AuthRemoteDataSource`: Connect ke `Supabase.instance.client.auth`.
+    - [x] `AuthRepositoryImpl`: Jembatan antara DataSource dan Domain.
 - [ ] **Auth Presentation Layer**
     - [ ] `AuthCubit/Bloc`: Manage state (Loading, Success, Error).
     - [ ] UI: `SplashPage` (Logic: `auth.currentUser != null` ? Home : GetStarted).
