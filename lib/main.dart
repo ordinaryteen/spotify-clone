@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:spotify_clone/core/theme/app_theme.dart';
 import 'package:spotify_clone/core/config/env.dart';
-import 'package:spotify_clone/service_locator.dart';
+import 'package:spotify_clone/core/di/service_locator.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
