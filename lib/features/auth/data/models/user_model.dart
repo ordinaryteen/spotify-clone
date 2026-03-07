@@ -1,4 +1,4 @@
-import 'package:spotify_clone/features/auth/domain/entities/user_entity.dart';
+import 'package:spotify_clone/core/entities/user_entity.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class UserModel extends UserEntity {
