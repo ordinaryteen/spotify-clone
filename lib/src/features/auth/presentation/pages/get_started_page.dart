@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:spotify_clone/core/theme/app_colors.dart';
 
 class GetStartedPage extends StatelessWidget {
@@ -68,15 +69,13 @@ class GetStartedPage extends StatelessWidget {
                   // Tombol "Get Started"
                   SizedBox(
                     width: double.infinity,
-                    height: 72, // Standar button gede
+                    height: 72,
                     child: ElevatedButton(
                       onPressed: () {
-                        // TODO: Ini nanti nembak event pindah page pake GoRouter!
-                        print('Lanjut ke Choose Mode / SignUp!!');
+                        context.go('/signup-or-signin');
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor:
-                            const Color(0xff42C83C), // Identik Spotify Green
+                        backgroundColor: const Color(0xff42C83C),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30),
                         ),

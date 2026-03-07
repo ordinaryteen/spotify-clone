@@ -32,8 +32,7 @@ class _SplashPageState extends State<SplashPage> {
       body: BlocListener<AuthBloc, AuthState>(
         listener: (context, state) {
           if (state is Authenticated) {
-            // TODO: Nanti pake GoRouter ke HomePage
-            print("poknya login bisa langusng ke home page");
+            context.go('/home');
           } else if (state is AuthUnauthenticated) {
             context.go('/get-started');
           } else if (state is AuthFailure) {
@@ -42,7 +41,7 @@ class _SplashPageState extends State<SplashPage> {
         },
         child: Center(
           child: Image.asset(
-            'assets/vectors/spotify_logo.png',
+            'assets/images/spotify_logo.png',
             width: 200,
           ),
         ),

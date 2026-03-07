@@ -1,10 +1,13 @@
-// lib/core/routes/app_router.dart
-import 'package:go_router/go_router.dart';
+import 'package:spotify_clone/src/features/auth/presentation/pages/signup_or_signin_page.dart';
+import 'package:spotify_clone/src/features/auth/presentation/pages/signin_page.dart';
+import 'package:spotify_clone/src/features/auth/presentation/pages/signup_page.dart';
 import 'package:spotify_clone/src/features/auth/presentation/pages/get_started_page.dart';
 import 'package:spotify_clone/src/features/auth/presentation/pages/splash_page.dart';
+import 'package:spotify_clone/src/features/home/presentation/pages/home_page.dart';
+import 'package:go_router/go_router.dart';
 
 final appRouter = GoRouter(
-  initialLocation: '/', // Pertama kali buka app, pasti lari ke sini
+  initialLocation: '/',
   routes: [
     GoRoute(
       path: '/',
@@ -16,6 +19,25 @@ final appRouter = GoRouter(
       name: 'get-started',
       builder: (context, state) => const GetStartedPage(),
     ),
-    // Nanti kita tambah '/login' dan '/signup' di sini
+    GoRoute(
+      path: '/signup-or-signin',
+      name: 'signup-or-signin',
+      builder: (context, state) => const SignupOrSigninPage(),
+    ),
+    GoRoute(
+      path: '/signin',
+      name: 'signin',
+      builder: (context, state) => const SigninPage(),
+    ),
+    GoRoute(
+      path: '/signup',
+      name: 'signup',
+      builder: (context, state) => const SignupPage(),
+    ),
+    GoRoute(
+      path: '/home',
+      name: 'home',
+      builder: (context, state) => const HomePage(),
+    ),
   ],
 );
