@@ -4,9 +4,9 @@
     - [x] Setup Folder Structure: `lib/core`, `lib/features`, `lib/service_locator.dart`.
 - [x] **Supabase Initial**
     - [x] Create Project di Supabase Dashboard.
-    - [ ] Setup Table `users` (id, full_name, email, avatar_url).
-    - [ ] Setup Table `songs` (id, title, artist, song_url, cover_url, duration, user_id).
-    - [ ] Enable RLS (Row Level Security) untuk semua table.
+    - [x] Setup Table `users` (id, full_name, email, avatar_url).
+    - [x] Setup Table `songs` (id, title, artist, song_url, cover_url, duration, user_id).
+    - [x] Enable RLS (Row Level Security) untuk semua table.
 - [x] **Configuration Files**
     - [x] `pubspec.yaml`: Add `supabase_flutter`, `get_it`, `dartz`, `flutter_bloc`, `equatable`, `file_picker`, `just_audio`.
     - [x] Setup `assets/fonts`, `assets/images`, `assets/vectors`.
