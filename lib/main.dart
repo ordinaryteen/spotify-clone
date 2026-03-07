@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:spotify_clone/routing/app_router.dart';
-import 'package:spotify_clone/src/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:spotify_clone/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:spotify_clone/core/theme/app_theme.dart';
 import 'package:spotify_clone/core/config/env.dart';

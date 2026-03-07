@@ -1,9 +1,9 @@
-import 'package:spotify_clone/src/features/auth/presentation/pages/signup_or_signin_page.dart';
-import 'package:spotify_clone/src/features/auth/presentation/pages/signin_page.dart';
-import 'package:spotify_clone/src/features/auth/presentation/pages/signup_page.dart';
-import 'package:spotify_clone/src/features/auth/presentation/pages/get_started_page.dart';
-import 'package:spotify_clone/src/features/auth/presentation/pages/splash_page.dart';
-import 'package:spotify_clone/src/features/home/presentation/pages/home_page.dart';
+import 'package:spotify_clone/features/auth/presentation/pages/signup_or_signin_page.dart';
+import 'package:spotify_clone/features/auth/presentation/pages/signin_page.dart';
+import 'package:spotify_clone/features/auth/presentation/pages/signup_page.dart';
+import 'package:spotify_clone/features/auth/presentation/pages/get_started_page.dart';
+import 'package:spotify_clone/features/auth/presentation/pages/splash_page.dart';
+import 'package:spotify_clone/features/home/presentation/pages/home_page.dart';
 import 'package:go_router/go_router.dart';
 
 final appRouter = GoRouter(

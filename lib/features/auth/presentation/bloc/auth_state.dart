@@ -1,4 +1,4 @@
-import 'package:spotify_clone/src/features/auth/domain/entities/user_entity.dart';
+import 'package:spotify_clone/features/auth/domain/entities/user_entity.dart';
 
 abstract class AuthState {}
 

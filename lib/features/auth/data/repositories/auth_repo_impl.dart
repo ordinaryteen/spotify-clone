@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:spotify_clone/core/errors/exceptions.dart';
 import 'package:spotify_clone/core/errors/failures.dart';
-import 'package:spotify_clone/src/features/auth/domain/entities/user_entity.dart';
-import 'package:spotify_clone/src/features/auth/domain/repositories/auth_repo.dart';
-import 'package:spotify_clone/src/features/auth/data/datasources/auth_remote_data_source_impl.dart';
+import 'package:spotify_clone/features/auth/domain/entities/user_entity.dart';
+import 'package:spotify_clone/features/auth/domain/repositories/auth_repo.dart';
+import 'package:spotify_clone/features/auth/data/datasources/auth_remote_data_source_impl.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
   final AuthRemoteDataSource remoteDataSource;

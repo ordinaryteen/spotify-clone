@@ -1,6 +1,6 @@
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:spotify_clone/core/errors/exceptions.dart';
-import 'package:spotify_clone/src/features/auth/data/models/user_model.dart';
+import 'package:spotify_clone/features/auth/data/models/user_model.dart';
 
 abstract class AuthRemoteDataSource {
   Future<UserModel> signIn(String email, String password);

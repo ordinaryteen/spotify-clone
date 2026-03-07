@@ -1,7 +1,7 @@
-import 'package:spotify_clone/src/features/auth/domain/usecases/sign_in_usecase.dart';
-import 'package:spotify_clone/src/features/auth/domain/usecases/sign_up_usecase.dart';
-import 'package:spotify_clone/src/features/auth/domain/usecases/get_user_usecase.dart';
-import 'package:spotify_clone/src/features/auth/domain/usecases/sign_out_usecase.dart';
+import 'package:spotify_clone/features/auth/domain/usecases/sign_in_usecase.dart';
+import 'package:spotify_clone/features/auth/domain/usecases/sign_up_usecase.dart';
+import 'package:spotify_clone/features/auth/domain/usecases/get_user_usecase.dart';
+import 'package:spotify_clone/features/auth/domain/usecases/sign_out_usecase.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'auth_event.dart';

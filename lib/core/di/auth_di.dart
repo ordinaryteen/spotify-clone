@@ -1,12 +1,12 @@
 import 'package:get_it/get_it.dart';
-import 'package:spotify_clone/src/features/auth/data/datasources/auth_remote_data_source_impl.dart';
-import 'package:spotify_clone/src/features/auth/data/repositories/auth_repo_impl.dart';
-import 'package:spotify_clone/src/features/auth/domain/repositories/auth_repo.dart';
-import 'package:spotify_clone/src/features/auth/domain/usecases/get_user_usecase.dart';
-import 'package:spotify_clone/src/features/auth/domain/usecases/sign_in_usecase.dart';
-import 'package:spotify_clone/src/features/auth/domain/usecases/sign_out_usecase.dart';
-import 'package:spotify_clone/src/features/auth/domain/usecases/sign_up_usecase.dart';
-import 'package:spotify_clone/src/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:spotify_clone/features/auth/data/datasources/auth_remote_data_source_impl.dart';
+import 'package:spotify_clone/features/auth/data/repositories/auth_repo_impl.dart';
+import 'package:spotify_clone/features/auth/domain/repositories/auth_repo.dart';
+import 'package:spotify_clone/features/auth/domain/usecases/get_user_usecase.dart';
+import 'package:spotify_clone/features/auth/domain/usecases/sign_in_usecase.dart';
+import 'package:spotify_clone/features/auth/domain/usecases/sign_out_usecase.dart';
+import 'package:spotify_clone/features/auth/domain/usecases/sign_up_usecase.dart';
+import 'package:spotify_clone/features/auth/presentation/bloc/auth_bloc.dart';
 
 void initAuthDI(GetIt sl) {
   // 1. Data Sources
