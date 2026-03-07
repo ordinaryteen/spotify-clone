@@ -1,0 +1,86 @@
+### 🏗️ PHASE 1: FOUNDATION & INFRASTRUCTURE
+- [ ] **Project Setup**
+    - [ ] `flutter create` dengan package name yang bener.
+    - [ ] Setup Folder Structure: `lib/core`, `lib/features`, `lib/service_locator.dart`.
+- [ ] **Supabase Initial**
+    - [ ] Create Project di Supabase Dashboard.
+    - [ ] Setup Table `users` (id, full_name, email, avatar_url).
+    - [ ] Setup Table `songs` (id, title, artist, song_url, cover_url, duration, user_id).
+    - [ ] Enable RLS (Row Level Security) untuk semua table.
+- [ ] **Configuration Files**
+    - [ ] `pubspec.yaml`: Add `supabase_flutter`, `get_it`, `dartz`, `flutter_bloc`, `equatable`, `file_picker`, `just_audio`.
+    - [ ] Setup `assets/fonts`, `assets/images`, `assets/vectors`.
+- [ ] **Core Logic**
+    - [ ] Create `Failure` & `Exception` classes (handling error biar seragam).
+    - [ ] Create `AppTheme` (Dark & Light theme data, button styles, input decoration).
+    - [ ] Initialize `ServiceLocator` (GetIt setup).
+
+### 🚀 PHASE 2: ENTRY POINT (SPLASH & AUTH)
+- [ ] **Auth Domain Layer**
+    - [ ] `UserEntity`: id, email, name, image.
+    - [ ] `AuthRepository` (Interface): `signup()`, `signin()`, `getUser()`.
+    - [ ] Use Cases: `SignupUseCase`, `SigninUseCase`, `GetUserUseCase`.
+- [ ] **Auth Data Layer**
+    - [ ] `UserModel`: extends `UserEntity` + `fromJson`/`toJson`.
+    - [ ] `AuthRemoteDataSource`: Connect ke `Supabase.instance.client.auth`.
+    - [ ] `AuthRepositoryImpl`: Jembatan antara DataSource dan Domain.
+- [ ] **Auth Presentation Layer**
+    - [ ] `AuthCubit/Bloc`: Manage state (Loading, Success, Error).
+    - [ ] UI: `SplashPage` (Logic: `auth.currentUser != null` ? Home : GetStarted).
+    - [ ] UI: `GetStartedPage`.
+    - [ ] UI: `SignupPage` (Input validation + Call SignupUseCase).
+    - [ ] UI: `LoginPage`.
+
+### 🎨 PHASE 3: APP PREFERENCE (THEME)
+- [ ] **Theme Domain**
+    - [ ] `ChangeThemeUseCase`.
+- [ ] **Theme Data**
+    - [ ] `ThemeLocalDataSource`: Simpan pilihan user ke `SharedPreferences`.
+- [ ] **Theme Presentation**
+    - [ ] `ThemeCubit`: Global state buat ganti `ThemeMode`.
+    - [ ] UI: `ChooseModePage`.
+
+### 📤 PHASE 4: CONTENT UPLOAD (THE CREATOR)
+- [ ] **Upload Domain**
+    - [ ] `UploadSongParams`: File audio, File cover, Title, dsb.
+    - [ ] `UploadSongUseCase`.
+- [ ] **Upload Data**
+    - [ ] `StorageRepository`: Method buat `uploadFile` ke Supabase Bucket.
+    - [ ] `SongRepositoryImpl`: Method `createSong` (simpan metadata ke table `songs`).
+- [ ] **Upload Presentation**
+    - [ ] `UploadCubit`: Manage upload progress (0% - 100%).
+    - [ ] Logic: Pick Audio & Image (pake `file_picker`).
+    - [ ] UI: `UploadSongPage` (Form input + Progress bar).
+
+### 🎵 PHASE 5: MUSIC LIBRARY (HOME)
+- [ ] **Library Domain**
+    - [ ] `SongEntity`: id, title, artist, duration, urls.
+    - [ ] `GetSongsUseCase`, `GetNewSongsUseCase`.
+- [ ] **Library Data**
+    - [ ] `SongModel`: Mapping dari Supabase Table.
+    - [ ] `SongRemoteDataSource`: `select()` data dari table `songs`.
+- [ ] **Library Presentation**
+    - [ ] `SongsCubit`: Fetch data pas Home dibuka.
+    - [ ] UI: `HomePage` (Tabs: News, Video, Artists, Podcast).
+    - [ ] UI: `SongCardWidget` & `SongListWidget`.
+
+### 🎧 PHASE 6: MEDIA PLAYER (THE CORE)
+- [ ] **Player Infrastructure**
+    - [ ] Setup `AudioPlayer` sebagai Singleton di `ServiceLocator`.
+- [ ] **Player Logic**
+    - [ ] `PlayerCubit`: Handle `play(url)`, `pause()`, `seek()`, `updatePosition()`.
+    - [ ] Logic: Kalkulasi `currentPosition` vs `totalDuration`.
+- [ ] **Player UI**
+    - [ ] UI: `MiniPlayer`: Floating widget yang muncul pas lagu mulai.
+    - [ ] UI: `SongPlayerPage`: Vinyl animation, Slider, Play/Pause button, Next/Prev.
+
+### ❤️ PHASE 7: PROFILE & FAVORITES
+- [ ] **Favorite Domain**
+    - [ ] `FavoriteEntity`.
+    - [ ] `ToggleFavoriteUseCase`, `GetFavoriteSongsUseCase`.
+- [ ] **Favorite Data**
+    - [ ] Update `SongRepositoryImpl` buat handle table `favorites` (Join table).
+- [ ] **Profile Presentation**
+    - [ ] `ProfileCubit`: Ambil data user + List lagu yang di-like.
+    - [ ] UI: `ProfilePage`.
+    - [ ] UI: `FavoriteListWidget`.
