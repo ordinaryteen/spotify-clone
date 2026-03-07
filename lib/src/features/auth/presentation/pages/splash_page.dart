@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:spotify_clone/core/theme/app_colors.dart';
 import 'package:spotify_clone/src/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:spotify_clone/src/features/auth/presentation/bloc/auth_event.dart';
@@ -32,12 +33,11 @@ class _SplashPageState extends State<SplashPage> {
         listener: (context, state) {
           if (state is Authenticated) {
             // TODO: Nanti pake GoRouter ke HomePage
-            print('Login valid -> Lari ke Home Page');
+            print("poknya login bisa langusng ke home page");
           } else if (state is AuthUnauthenticated) {
-            // TODO: Nanti pake GoRouter ke GetStartedPage
-            print('Gak ada session -> Mampir ke Get Started Page');
+            context.go('/get-started');
           } else if (state is AuthFailure) {
-            print('Gagal Authenticate -> Mampir ke Get Started Page');
+            context.go('/get-started');
           }
         },
         child: Center(

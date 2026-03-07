@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:spotify_clone/src/features/auth/presentation/pages/splash_page.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:spotify_clone/routing/app_router.dart';
+import 'package:spotify_clone/src/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:spotify_clone/core/theme/app_theme.dart';
 import 'package:spotify_clone/core/config/env.dart';
 import 'package:spotify_clone/core/di/service_locator.dart';
-import 'package:spotify_clone/src/features/auth/presentation/pages/get_started_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,11 +28,18 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Spotify Clone',
-      debugShowCheckedModeBanner: false,
-      theme: AppTheme.darkTheme,
-      home: GetStartedPage(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => sl<AuthBloc>(),
+        ),
+      ],
+      child: MaterialApp.router(
+        title: 'Spotify Clone',
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme.darkTheme,
+        routerConfig: appRouter,
+      ),
     );
   }
 }
