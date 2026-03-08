@@ -1,29 +1,30 @@
 import 'package:spotify_clone/core/entities/user_entity.dart';
+import 'package:spotify_clone/features/auth/domain/entities/auth_user_entity.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-class UserModel extends UserEntity {
+class UserModel extends AuthUserEntity {
   const UserModel({
-    required super.id,
+    required super.core,
     required super.email,
-    required super.fullName,
-    super.avatarUrl,
   });
 
   factory UserModel.fromJson(Map<String, dynamic> json) {
     return UserModel(
-      id: json['id'] ?? '',
+      core: UserEntity(
+        id: json['id'] ?? '',
+        fullName: json['full_name'] ?? '',
+      ),
       email: json['email'] ?? '',
-      fullName: json['full_name'] ?? '',
-      avatarUrl: json['avatar_url'],
     );
   }
 
   factory UserModel.fromSupabaseUser(User user) {
     return UserModel(
-      id: user.id,
+      core: UserEntity(
+        id: user.id,
+        fullName: user.userMetadata?['full_name'] ?? 'Unknown',
+      ),
       email: user.email ?? '',
-      fullName: user.userMetadata?['full_name'] ?? 'Unknown',
-      avatarUrl: user.userMetadata?['avatar_url'],
     );
   }
 }

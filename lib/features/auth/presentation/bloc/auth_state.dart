@@ -1,4 +1,4 @@
-import 'package:spotify_clone/core/entities/user_entity.dart';
+import 'package:spotify_clone/features/auth/domain/entities/auth_user_entity.dart';
 
 abstract class AuthState {}
 
@@ -7,7 +7,7 @@ class AuthInitial extends AuthState {}
 class AuthLoading extends AuthState {}
 
 class Authenticated extends AuthState {
-  final UserEntity user;
+  final AuthUserEntity user;
 
   Authenticated(this.user);
 }

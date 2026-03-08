@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:spotify_clone/core/errors/failures.dart';
-import 'package:spotify_clone/core/entities/user_entity.dart';
+import 'package:spotify_clone/features/auth/domain/entities/auth_user_entity.dart';
 import 'package:spotify_clone/features/auth/domain/repositories/auth_repo.dart';
 
 class SignUpParams {
@@ -16,7 +16,7 @@ class SignUpUseCase {
 
   SignUpUseCase(this.repository);
 
-  Future<Either<Failure, UserEntity>> call(SignUpParams params) async {
+  Future<Either<Failure, AuthUserEntity>> call(SignUpParams params) async {
     return await repository.signUp(
       email: params.email,
       password: params.password,

@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:spotify_clone/core/errors/exceptions.dart';
 import 'package:spotify_clone/core/errors/failures.dart';
-import 'package:spotify_clone/core/entities/user_entity.dart';
+import 'package:spotify_clone/features/auth/domain/entities/auth_user_entity.dart';
 import 'package:spotify_clone/features/auth/domain/repositories/auth_repo.dart';
 import 'package:spotify_clone/features/auth/data/datasources/auth_remote_data_source_impl.dart';
 
@@ -11,7 +11,7 @@ class AuthRepositoryImpl implements AuthRepository {
   AuthRepositoryImpl(this.remoteDataSource);
 
   @override
-  Future<Either<Failure, UserEntity>> signIn({
+  Future<Either<Failure, AuthUserEntity>> signIn({
     required String email,
     required String password,
   }) async {
@@ -24,7 +24,7 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<Either<Failure, UserEntity>> signUp({
+  Future<Either<Failure, AuthUserEntity>> signUp({
     required String email,
     required String password,
     required String fullName,
@@ -38,7 +38,7 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<Either<Failure, UserEntity>> getCurrentUser() async {
+  Future<Either<Failure, AuthUserEntity>> getCurrentUser() async {
     try {
       final user = await remoteDataSource.getCurrentUser();
       if (user != null) {
