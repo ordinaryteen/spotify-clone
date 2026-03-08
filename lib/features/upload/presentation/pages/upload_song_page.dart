@@ -1,5 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:spotify_clone/features/upload/presentation/widgets/audio_file_picker.dart';
 import 'package:spotify_clone/features/upload/presentation/widgets/cover_art_picker.dart';
 import 'package:spotify_clone/shared/widgets/basic_app_bar.dart';
@@ -14,7 +16,6 @@ class UploadSongPage extends StatefulWidget {
 }
 
 class _UploadSongPageState extends State<UploadSongPage> {
-  // Sementara kita simpan State UI di sini sebelum dipindah/connect ke BLoC
   File? _coverFile;
   File? _audioFile;
 
@@ -25,6 +26,30 @@ class _UploadSongPageState extends State<UploadSongPage> {
 
   // list of genres
   final List<String> _genres = ['Electronic', 'Hip Hop', 'Pop', 'Rock', 'Jazz'];
+
+  // --- Fungsi Pilih Gambar (Cover Art) ---
+  Future<void> _pickCoverImage() async {
+    final result = await FilePicker.platform.pickFiles(
+      type: FileType.image,
+    );
+    if (result != null) {
+      setState(() {
+        _coverFile = File(result.files.single.path!);
+      });
+    }
+  }
+
+  // --- Fungsi Pilih Audio (MP3/WAV) ---
+  Future<void> _pickAudioFile() async {
+    final result = await FilePicker.platform.pickFiles(
+      type: FileType.audio,
+    );
+    if (result != null) {
+      setState(() {
+        _audioFile = File(result.files.single.path!);
+      });
+    }
+  }
 
   @override
   void dispose() {
@@ -63,10 +88,7 @@ class _UploadSongPageState extends State<UploadSongPage> {
             const SizedBox(height: 12),
             CoverArtPicker(
               imageFile: _coverFile,
-              onTap: () {
-                // TODO: Panggil fungsi pick image nanti di sini
-                print('Nanti buka galeri');
-              },
+              onTap: _pickCoverImage, // Panggil Pick Image
             ),
             const SizedBox(height: 24),
 
@@ -82,10 +104,7 @@ class _UploadSongPageState extends State<UploadSongPage> {
             const SizedBox(height: 12),
             AudioFilePicker(
               audioFile: _audioFile,
-              onTap: () {
-                // TODO: Panggil fungsi pick mp3 nanti di sini
-                print('Nanti buka file explorer');
-              },
+              onTap: _pickAudioFile, // Panggil Pick Audio
             ),
             const SizedBox(height: 24),
 
@@ -172,8 +191,40 @@ class _UploadSongPageState extends State<UploadSongPage> {
             // 4. Upload Button
             BasicAppButton(
               onPressed: () {
-                // TODO: Panggil BLoC Upload Song Event nanti di sini
-                print('Upload Dipencet!');
+                // VALIDASI LOKAL (Tanpa BLoC)
+                if (_coverFile == null ||
+                    _audioFile == null ||
+                    _titleController.text.isEmpty ||
+                    _artistController.text.isEmpty ||
+                    _selectedGenre == null) {
+                  // 1. Getarkan HP (Haptic Feedback) - Heavy Impact biar berasa!
+                  HapticFeedback.heavyImpact();
+
+                  // 2. Beri peringatan merah ke User
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text(
+                        'Please fill all fields and select files!',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      backgroundColor: Colors.redAccent,
+                      behavior: SnackBarBehavior.floating,
+                    ),
+                  );
+                  return; // Stop di sini, jangan lanjut ke tahap BLoC!
+                }
+
+                // TODO: Tahap selanjutnya, panggil BLoC dari sini!
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text(
+                      'All Valid! Siap Meluncur ke BLoC (Coming Soon🚀)',
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    backgroundColor: Colors.greenAccent,
+                    behavior: SnackBarBehavior.floating,
+                  ),
+                );
               },
               title: 'Upload Song',
             ),
