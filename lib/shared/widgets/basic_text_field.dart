@@ -18,6 +18,7 @@ class BasicTextField extends StatelessWidget {
     return TextField(
       controller: controller,
       obscureText: isPassword,
+      cursorColor: AppColors.primary,
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: const TextStyle(color: AppColors.grey),
@@ -32,6 +33,10 @@ class BasicTextField extends StatelessWidget {
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(30),
           borderSide: const BorderSide(color: AppColors.grey, width: 0.5),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(30),
+          borderSide: const BorderSide(color: AppColors.primary, width: 1.5),
         ),
         suffixIcon: isPassword
             ? const Icon(Icons.visibility_off, color: AppColors.grey)

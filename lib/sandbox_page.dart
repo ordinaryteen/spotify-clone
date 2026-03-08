@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spotify_clone/features/upload/presentation/widgets/audio_file_picker.dart';
+import 'package:spotify_clone/features/upload/presentation/pages/upload_song_page.dart';
 
 class SandboxPage extends StatelessWidget {
   const SandboxPage({super.key});
@@ -14,16 +14,8 @@ class SandboxPage extends StatelessWidget {
       ),
       // Background dark mode Spotify-style
       backgroundColor: const Color(0xFF121212),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: AudioFilePicker(
-            onTap: () {
-              print("Tapped Audio Picker!");
-            },
-          ),
-        ),
-      ),
+      // Langsung panggil halaman utuh racikan kita buat ngetes layout-nya!
+      body: const UploadSongPage(),
     );
   }
 }
