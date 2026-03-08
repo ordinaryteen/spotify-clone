@@ -6,7 +6,7 @@ import 'package:spotify_clone/features/upload/data/repositories/storage_reposito
 import 'package:spotify_clone/features/upload/domain/repositories/song_repository.dart';
 import 'package:spotify_clone/features/upload/domain/repositories/storage_repository.dart';
 import 'package:spotify_clone/features/upload/domain/usecases/upload_song_usecase.dart';
-// Note: We haven't created the BLoC yet, we'll add it here later
+import 'package:spotify_clone/features/upload/presentation/bloc/upload_bloc.dart';
 
 void initUploadDI(GetIt sl) {
   // 1. Data Sources
@@ -33,5 +33,6 @@ void initUploadDI(GetIt sl) {
     ),
   );
 
-  // 4. BLoC (TBD)
+  // 4. BLoC (Factory rather than Singleton, since UI State needs resetting on each close/open)
+  sl.registerFactory(() => UploadBloc(sl()));
 }
