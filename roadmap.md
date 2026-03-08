@@ -41,12 +41,12 @@
     - [ ] UI: `ChooseModePage`.
 
 ### 📤 PHASE 4: CONTENT UPLOAD (THE CREATOR)
-- [ ] **Upload Domain**
-    - [ ] `UploadSongParams`: File audio, File cover, Title, dsb.
-    - [ ] `UploadSongUseCase`.
-- [ ] **Upload Data**
-    - [ ] `StorageRepository`: Method buat `uploadFile` ke Supabase Bucket.
-    - [ ] `SongRepositoryImpl`: Method `createSong` (simpan metadata ke table `songs`).
+- [x] **Upload Domain**
+    - [x] `UploadSongParams`: File audio, File cover, Title, dsb.
+    - [x] `UploadSongUseCase`.
+- [x] **Upload Data**
+    - [x] `StorageRepository`: Method buat `uploadFile` ke Supabase Bucket.
+    - [x] `SongRepositoryImpl`: Method `createSong` (simpan metadata ke table `songs`).
 - [ ] **Upload Presentation**
     - [ ] `UploadCubit`: Manage upload progress (0% - 100%).
     - [ ] Logic: Pick Audio & Image (pake `file_picker`).
