@@ -8,6 +8,7 @@ class UploadSongEvent extends UploadEvent {
   final File coverFile;
   final String title;
   final String artist;
+  final String genre;
   final UserEntity creator;
 
   UploadSongEvent({
@@ -15,6 +16,7 @@ class UploadSongEvent extends UploadEvent {
     required this.coverFile,
     required this.title,
     required this.artist,
+    required this.genre,
     required this.creator,
   });
 }

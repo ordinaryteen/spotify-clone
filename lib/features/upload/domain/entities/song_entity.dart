@@ -5,6 +5,7 @@ class SongEntity extends Equatable {
   final String id;
   final String title;
   final String artist;
+  final String genre;
   final double duration;
   final DateTime releaseDate;
   final String songUrl;
@@ -15,6 +16,7 @@ class SongEntity extends Equatable {
     required this.id,
     required this.title,
     required this.artist,
+    required this.genre,
     required this.duration,
     required this.releaseDate,
     required this.songUrl,
@@ -27,6 +29,7 @@ class SongEntity extends Equatable {
         id,
         title,
         artist,
+        genre,
         duration,
         releaseDate,
         songUrl,

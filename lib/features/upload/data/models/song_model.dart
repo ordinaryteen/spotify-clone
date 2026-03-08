@@ -6,6 +6,7 @@ class SongModel extends SongEntity {
     required super.id,
     required super.title,
     required super.artist,
+    required super.genre,
     required super.duration,
     required super.releaseDate,
     required super.songUrl,
@@ -19,13 +20,13 @@ class SongModel extends SongEntity {
       id: json['id'] ?? '',
       title: json['title'] ?? '',
       artist: json['artist'] ?? '',
+      genre: json['genre'] ?? '',
       duration: json['duration']?.toDouble() ?? 0.0,
       releaseDate: json['release_date'] != null
           ? DateTime.parse(json['release_date'])
           : DateTime.now(),
       songUrl: json['song_url'] ?? '',
       coverUrl: json['cover_url'] ?? '',
-      // Supabase trick: When we fetch 'songs', we do a JOIN with 'users' table
       creator: UserEntity(
         id: json['users']?['id'] ?? '',
         fullName: json['users']?['full_name'] ?? 'Unknown',
@@ -39,6 +40,7 @@ class SongModel extends SongEntity {
       // 'id' is usually omitted during Insert because Supabase auto-generates the UUID
       'title': title,
       'artist': artist,
+      'genre': genre,
       'duration': duration, // Maps safely because it's double
       'release_date': releaseDate.toIso8601String(),
       'song_url': songUrl, // Link from Storage

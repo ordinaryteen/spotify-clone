@@ -19,6 +19,7 @@ class SongRepositoryImpl implements SongRepository {
         id: song.id,
         title: song.title,
         artist: song.artist,
+        genre: song.genre,
         duration: song.duration,
         releaseDate: song.releaseDate,
         songUrl: song.songUrl,

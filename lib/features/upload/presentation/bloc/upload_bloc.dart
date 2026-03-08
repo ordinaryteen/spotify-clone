@@ -34,6 +34,7 @@ class UploadBloc extends Bloc<UploadEvent, UploadState> {
         coverFile: event.coverFile,
         title: event.title,
         artist: event.artist,
+        genre: event.genre,
         duration: durationInSeconds,
         releaseDate:
             DateTime.now(), // Karena lagunya baru dirilis ke app lu jam segini

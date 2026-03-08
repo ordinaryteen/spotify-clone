@@ -11,6 +11,7 @@ class UploadSongParams {
   final File coverFile;
   final String title;
   final String artist;
+  final String genre;
   final double duration;
   final DateTime releaseDate;
   final UserEntity creator;
@@ -20,6 +21,7 @@ class UploadSongParams {
     required this.coverFile,
     required this.title,
     required this.artist,
+    required this.genre,
     required this.duration,
     required this.releaseDate,
     required this.creator,
@@ -75,6 +77,7 @@ class UploadSongUseCase {
       id: '',
       title: params.title,
       artist: params.artist,
+      genre: params.genre,
       duration: params.duration,
       releaseDate: params.releaseDate,
       songUrl: audioUrl,
