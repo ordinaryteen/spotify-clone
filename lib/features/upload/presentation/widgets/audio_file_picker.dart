@@ -18,10 +18,14 @@ class AudioFilePicker extends StatelessWidget {
       color: Colors.white.withValues(alpha: 0.05),
       borderRadius: BorderRadius.circular(16),
       clipBehavior: Clip.antiAlias,
+
+      // INKWELL
       child: InkWell(
         onTap: onTap,
         splashColor: Colors.white.withValues(alpha: 0.07),
         highlightColor: Colors.white.withValues(alpha: 0.03),
+
+        // CONTAINER
         child: Container(
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
@@ -31,6 +35,8 @@ class AudioFilePicker extends StatelessWidget {
             ),
             borderRadius: BorderRadius.circular(16),
           ),
+
+          // ROW
           child: Row(
             children: [
               // 1. Ikon Nada ber-background ijo
@@ -51,6 +57,7 @@ class AudioFilePicker extends StatelessWidget {
               // 2. Tulisan file yang dipilih atau teks "Select MP3..."
               Expanded(
                 child: Column(
+                  mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
